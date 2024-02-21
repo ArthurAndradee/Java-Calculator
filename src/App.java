@@ -11,10 +11,10 @@ public class App {
         float secondNumber = read.nextFloat();
         
         System.out.println("Select which operator you want to use");
-        System.out.println("1. Addition (+)");
-        System.out.println("2. Minus (-)");
-        System.out.println("3. Multiplication (*)");
-        System.out.println("4. Division (/)");
+        System.out.println("Addition (+)");
+        System.out.println("Minus (-)");
+        System.out.println("Multiplication (*)");
+        System.out.println("Division (/)");
 
         char operator = read.next().charAt(0);
 
@@ -34,6 +34,36 @@ public class App {
 
         } else {
             System.out.println("Invalid operator");
+        }
+
+        char userContinue = read.next().charAt(0);
+
+        while (userContinue == 'Y') {
+          System.out.println("Select which operator you want to use");
+          System.out.println("Addition (+)");
+          System.out.println("Minus (-)");
+          System.out.println("Multiplication (*)");
+          System.out.println("Division (/)");
+
+          float aditionalNumber = read.nextFloat();
+
+          operator = read.next().charAt(0);
+
+          if (operator == '+') {
+               result = result + secondNumber;
+  
+          } else if (operator == '-') {
+               result = firstNumber - secondNumber;
+  
+          } else if (operator == '*') {
+               result = firstNumber * secondNumber;
+  
+          } else if (operator == '/') {
+               result = firstNumber / secondNumber;
+  
+          } else {
+              System.out.println("Invalid operator");
+          }
         }
 
         System.out.println(result);
