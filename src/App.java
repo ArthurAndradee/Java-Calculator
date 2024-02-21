@@ -13,6 +13,8 @@ public class App {
         float result = firstGrade + secondGrade;
         float division = result / 2;
         System.out.printf("Result is: %f", division);  // Output user input
+
+        //testing git
         
         read.close();
     }
