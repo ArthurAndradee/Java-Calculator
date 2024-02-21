@@ -15,23 +15,28 @@ public class App {
         System.out.println("2. Minus (-)");
         System.out.println("3. Multiplication (*)");
         System.out.println("4. Division (/)");
+
         char operator = read.next().charAt(0);
 
+        float result = 0;
+
         if (operator == '+') {
-            float result = firstNumber + secondNumber;
-            System.out.println(result);
+             result = firstNumber + secondNumber;
+
         } else if (operator == '-') {
-            float result = firstNumber - secondNumber;
-            System.out.println(result);
+             result = firstNumber - secondNumber;
+
         } else if (operator == '*') {
-            float result = firstNumber * secondNumber;
-            System.out.println(result);
+             result = firstNumber * secondNumber;
+
         } else if (operator == '/') {
-            float result = firstNumber / secondNumber;
-            System.out.println(result);
+             result = firstNumber / secondNumber;
+
         } else {
             System.out.println("Invalid operator");
         }
+
+        System.out.println(result);
 
         read.close();
     }
