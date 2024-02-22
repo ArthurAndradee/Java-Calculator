@@ -6,22 +6,20 @@ public class App {
 
         System.out.println("Enter your first number");
         float firstNumber = read.nextFloat();
-
-        do {
-          System.out.print("Invalid number");
-        } while (firstNumber != (int)firstNumber);
         
         System.out.println("Enter your second number");
         float secondNumber = read.nextFloat();
-
         
         System.out.println("Select which operator you want to use \nAddition (+)\nMinus (-)\nMultiplication (*)\nDivision (/)");
         char operator = read.next().charAt(0);
 
-        do {
-            System.out.println("Invalid operator");
-            operator = read.next().charAt(0);
-        } while (operator != '+' && operator != '-' && operator != '&' && operator != '/');
+        if (operator != '+' && operator != '-' && operator != '&' && operator != '/') {                
+            do {
+                System.out.println("Invalid operator");
+                operator = read.next().charAt(0);
+            } while (operator != '+' && operator != '-' && operator != '&' && operator != '/');
+        }
+
 
         float result = 0;
 
@@ -40,10 +38,12 @@ public class App {
         System.out.println("Would you like to do more operations? (Y/N)");
         char userAnswer = read.next().charAt(0);
 
-        do {
-            System.out.println("Please insert a valid character: (Y/N)");
-            userAnswer = read.next().charAt(0);
-        } while (userAnswer != 'Y' && userAnswer != 'N');
+        if (userAnswer != 'Y' && userAnswer != 'N') {
+            do {
+                System.out.println("Please insert a valid character: (Y/N)");
+                userAnswer = read.next().charAt(0);
+            } while (userAnswer != 'Y' && userAnswer != 'N');
+        }
 
         while (userAnswer == 'Y') {
             System.out.println("Enter your additional number");
@@ -52,10 +52,12 @@ public class App {
             System.out.println("Select which operator you want to use \nAddition (+)\nMinus (-)\nMultiplication (*)\nDivision (/)");
             operator = read.next().charAt(0);
 
-            do {
-                System.out.println("Invalid operator");
-                operator = read.next().charAt(0);
-            } while (operator != '+' && operator != '-' && operator != '&' && operator != '/');
+            if (operator != '+' && operator != '-' && operator != '&' && operator != '/') {                
+                do {
+                    System.out.println("Invalid operator");
+                    operator = read.next().charAt(0);
+                } while (operator != '+' && operator != '-' && operator != '&' && operator != '/');
+            }
 
             if (operator == '+') {
                 result = result + AditionalNumber;
@@ -65,9 +67,6 @@ public class App {
                 result = result * AditionalNumber;
             } else if (operator == '/') {
                 result = result / AditionalNumber;
-            } else {
-                System.out.println("Invalid operator");
-                operator = read.next().charAt(0);
             }
 
             System.out.println(result);
