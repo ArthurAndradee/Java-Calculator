@@ -40,12 +40,17 @@ public class App {
             userAnswer = read.next().charAt(0);
         } while (userAnswer != 'Y' && userAnswer != 'N');
 
-        if (userAnswer == 'Y') {
+        while (userAnswer == 'Y') {
             System.out.println("Enter your additional number");
             float AditionalNumber = read.nextFloat();
 
             System.out.println("Select which operator you want to use \nAddition (+)\nMinus (-)\nMultiplication (*)\nDivision (/)");
             operator = read.next().charAt(0);
+
+            do {
+                System.out.println("Invalid operator");
+                operator = read.next().charAt(0);
+            } while (operator != '+' && operator != '-' && operator != '&' && operator != '/');
 
             if (operator == '+') {
                 result = result + AditionalNumber;
@@ -64,8 +69,9 @@ public class App {
 
             System.out.println("Would you like to do more operations? (Y/N)");
             userAnswer = read.next().charAt(0);
+        } 
 
-        } else if (userAnswer != 'N') {
+        if (userAnswer != 'N') {
             System.out.println("Invalid input");
             userAnswer = read.next().charAt(0);
         }
