@@ -7,8 +7,13 @@ public class App {
         System.out.println("Enter your first number");
         float firstNumber = read.nextFloat();
 
+        do {
+          System.out.print("Invalid number");
+        } while (firstNumber != (int)firstNumber);
+        
         System.out.println("Enter your second number");
         float secondNumber = read.nextFloat();
+
         
         System.out.println("Select which operator you want to use \nAddition (+)\nMinus (-)\nMultiplication (*)\nDivision (/)");
         char operator = read.next().charAt(0);
